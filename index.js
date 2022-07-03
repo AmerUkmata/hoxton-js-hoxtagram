@@ -1,37 +1,64 @@
-// solution goes here
-//<article class="image-card">
-        //<h2 class="title">Title of image goes here</h2>
-        //<img src="./assets/image-placeholder.jpg" class="image" />
-        //<div class="likes-section">
-          //<span class="likes">0 likes</span>
-          //<button class="like-button">♥</button>
-        //</div>
-        //<ul class="comments">
-          //<li>Get rid of these comments</li>
-          //<li>And replace them with the real ones</li>
-          //<li>From the server</li>
-        //</ul>
-      //</article>
+
+let images = [
+      {
+        id: 1,
+        title: "Coder dog",
+        likes: 7,
+        image: "./assets/coder-dog.png"
+      },
+      {
+        id: 2,
+        title: "Coder cats",
+        likes: 5,
+        image: "./assets/coder-cat.jpeg"
+      },
+      {
+        id: 1,
+        content: "What a cute dog!",
+        imageId: 1
+      },
+      {
+        id: 2,
+        content: "He has the paws for this!",
+        imageId: 2
+      },
+      {
+        id: 3,
+        content: "Someone's in trouble!",
+        imageId: 2
+      },
+      {
+        imageId: 1,
+        content: "Funny dog!!",
+        id: 4
+      },
+      {
+        imageId: 1,
+        content: "Hes a good boy!!",
+        id: 5
+      }
+    ]
 
 
-function card () {
+
+function card (img) {
     let articleEl = document.createElement('article')
     articleEl.className = 'image-card'
 
     let h2El = document.createElement('h2')
     h2El.className = 'title'
-    h2El.textContent = ''
+    h2El.textContent = img.title 
 
     let imgEl = document.createElement('img')
     imgEl.className = 'image'
-    imgEl.src = './assets/image-placeholder.jpg'
+    imgEl.src = img.image
 
     let divEl = document.createElement('div')
     divEl.className = 'likes-section'
 
     let spanEl = document.createElement('span')
     spanEl.className = 'likes'
-    spanEl.textContent = '0 likes'
+    spanEl.textContent = img.likes
 
     let buttonEl = document.createElement('button')
     buttonEl.className = 'like-button'
@@ -41,13 +68,13 @@ function card () {
     ulEl.className = 'comments'
 
     let liEl = document.createElement('li')
-    liEl.textContent = 'Get rid of these comments'
+    liEl.textContent = img.content
 
     let li2El = document.createElement('li')
-    li2El.textContent = 'And replace them with the real ones'
+    li2El.textContent = img.content
 
     let li3El = document.createElement('li')
-    li3El.textContent = 'From the server'
+    li3El.textContent = img.content
     
     let theul = document.querySelector('.image-container')
     theul?.appendChild(articleEl)
@@ -57,4 +84,7 @@ function card () {
 
 }
 
-card()
+
+for(let img of images){
+    card(img)
+}
