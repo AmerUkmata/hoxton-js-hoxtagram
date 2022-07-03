@@ -69,18 +69,12 @@ function card (img) {
 
     let liEl = document.createElement('li')
     liEl.textContent = img.content
-
-    let li2El = document.createElement('li')
-    li2El.textContent = img.content
-
-    let li3El = document.createElement('li')
-    li3El.textContent = img.content
     
     let theul = document.querySelector('.image-container')
     theul?.appendChild(articleEl)
-    articleEl.append(h2El, imgEl, divEl, spanEl, buttonEl, ulEl, liEl, li2El, li3El)
+    articleEl.append(h2El, imgEl, divEl, spanEl, buttonEl, ulEl, liEl)
     divEl.append(spanEl, buttonEl)
-    ulEl.append(liEl, li2El, li3El)
+    ulEl.append(liEl)
 
 }
 
