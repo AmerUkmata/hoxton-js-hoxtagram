@@ -13,7 +13,6 @@
         //</ul>
       //</article>
 
-import './style.css'
 
 function card () {
     let articleEl = document.createElement('article')
