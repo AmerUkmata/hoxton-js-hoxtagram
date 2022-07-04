@@ -34,7 +34,7 @@ type CommentData = {
       })
   }
   
-  function updateImage (image) {
+  function updateImage (image:Image) {
     return fetch(`http://localhost:3001/images/${image.id}`, {
       method: 'PATCH',
       headers: {
@@ -90,9 +90,20 @@ type CommentData = {
         commentLi.textContent = comment.content
         commentsUl.append(commentLi)
       }
-  
+      let formEl = document.createElement('form')
+      formEl.className = 'comment-form'
+      let inp = document.createElement('input')
+      inp.className = 'comment-input'
+      inp.type = 'text'
+      inp.name = 'comment'
+      inp.placeholder = 'Add a comment...'
+      let btnsub = document.createElement('button')
+      btnsub.className = 'comment-button'
+      btnsub.type = 'submit'
+      btnsub.textContent = 'Post'
       likesSection.append(likesSpan, likeBtn)
-      articleEl.append(titleEl, imgEl, likesSection, commentsUl)
+      formEl.append(inp, btnsub)
+      articleEl.append(titleEl, imgEl, likesSection, commentsUl, formEl)
   
       imageContainer.append(articleEl)
     }
