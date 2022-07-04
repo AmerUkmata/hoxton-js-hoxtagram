@@ -26,7 +26,7 @@ type CommentData = {
   // Q: What images do I have? state.images
   
   function getImagesFromServer () {
-    fetch('http://localhost:30001/images')
+    fetch('http://localhost:3001/images')
       .then(resp => resp.json())
       .then(imagesFromServer => {
         state.images = imagesFromServer
@@ -35,7 +35,7 @@ type CommentData = {
   }
   
   function updateImage (image) {
-    return fetch(`http://localhost:3333/images/${image.id}`, {
+    return fetch(`http://localhost:3001/images/${image.id}`, {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json'
